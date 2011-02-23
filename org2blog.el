@@ -467,8 +467,6 @@ Entry to this mode calls the value of `org2blog/wp-mode-hook'."
   "Replace pre blocks with sourcecode shortcode blocks."
   (save-excursion
     (let (pos code lang info params src-re code-re)
-
-	  ;;T MAYBE] search for <pre> ... </pre> in text, via a temporary buffer (FIXME why?)
       (with-temp-buffer
         (insert html)
         (goto-char (point-min))
@@ -491,8 +489,6 @@ Entry to this mode calls the value of `org2blog/wp-mode-hook'."
         (setq html (buffer-substring-no-properties (point-min) (point-max))))
       (goto-char (point-min))
       (setq pos 1)
-
-	  ;;T MAYBE] search for org-babel code blocks, ie. #+SRC_BEGIN / #+SRC_END.
       (while (re-search-forward org-babel-src-block-regexp nil t 1)
         (backward-word)
         (setq info (org-babel-get-src-block-info))
