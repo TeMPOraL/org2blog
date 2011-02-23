@@ -391,7 +391,7 @@ Entry to this mode calls the value of `org2blog/wp-mode-hook'."
         (setq start-pos (point-min))
         (goto-char start-pos)
         (while (re-search-forward 
-                "\\(<\\(pre\\|blockquote\\).*?>\\(.\\|[[:space:]]\\)*?</\\2.*?>\\)"
+                "\\(<\\(pre\\|blockquote\\|code\\).*?>\\(.\\|[[:space:]]\\)*?</\\2.*?>\\)"
                 nil t 1)
           (setq end-pos (match-beginning 0))
           (replace-regexp "\\\n" " " nil start-pos end-pos)
