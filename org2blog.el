@@ -383,7 +383,7 @@ Entry to this mode calls the value of `org2blog/wp-mode-hook'."
   post-par))
 
 (defun org2blog/wp-strip-new-lines (html)
-  "Strip the new lines from the html, except in pre and blockquote tags."
+  "Strip the new lines from the html, except in pre, code and blockquote tags."
   (save-excursion
     (with-temp-buffer
       (let* (start-pos end-pos)
